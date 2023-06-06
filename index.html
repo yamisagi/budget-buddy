@@ -69,10 +69,10 @@
                 id="expense-input"
                 type="text"
                 class="w-100"
-                placeholder="***$"
+                placeholder="***₺"
               />
             </div>
-            <div class="d-flex justify-content-center mt-5">
+            <div class="d-flex justify-content-center mt-5" id="save-expense">
               <button class="btn btn-dark" id="add-expense">Kaydet</button>
             </div>
           </div>
@@ -85,68 +85,42 @@
         <div class="card">
           <div class="card-body">
             <div class="card-header my-3 text-center">Harcamalar</div>
-            <table class="table table-bordered table-striped">
+            <table
+              class="table table-bordered table-striped"
+              id="expenses-table"
+            >
               <thead>
                 <tr>
-                  <th scope="col">Tarih</th>
                   <th scope="col">Harcama Yeri</th>
+                  <th scope="col">Tarih</th>
                   <th scope="col">Miktar</th>
                 </tr>
               </thead>
-              <tbody id="table-body">
-                <tr>
-                  <td>Market</td>
-                  <td>12.12.2020</td>
-                  <td>100$</td>
-
-                  <td class="d-flex justify-content-center align-items-center">
-                    <div class="btn btn-sm btn-danger">
-                      <i class="fas fa-trash-alt"></i>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Kira</td>
-                  <td>12.12.2020</td>
-                  <td>100$</td>
-                  <td class="d-flex justify-content-center align-items-center">
-                    <div class="btn btn-sm btn-danger">
-                      <i class="fas fa-trash-alt"></i>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Fatura</td>
-                  <td>12.12.2020</td>
-                  <td>100$</td>
-                  <td class="d-flex justify-content-center align-items-center">
-                    <div class="btn btn-sm btn-danger">
-                      <i class="fas fa-trash-alt"></i>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
+              <tbody id="table-body"></tbody>
             </table>
             <div class="d-flex justify-content-end mt-5">
-              <table class="table rounded table-dark table-striped w-25">
+              <table
+                class="table rounded table-dark table-striped w-25"
+                id="calculate-table"
+              >
                 <thead>
-                  <tr>
-                    <th scope="col">Toplam</th>
-                    <th scope="col">: 300$</th>
+                  <tr id="income">
+                    <th scope="col">Geliriniz</th>
+                    <th scope="col" id="total-income">0₺</th>
                   </tr>
-                  <tr>
+                  <tr id="expense">
+                    <th scope="col">Gideriniz</th>
+                    <th scope="col" id="total-expense">0₺</th>
+                  </tr>
+                  <tr id="total">
                     <th scope="col">Kalan</th>
-                    <th scope="col">: 300$</th>
-                  </tr>
-                  <tr>
-                    <th scope="col">Gelir</th>
-                    <th scope="col">: 300$</th>
+                    <th scope="col" id="total-balance">0₺</th>
                   </tr>
                 </thead>
               </table>
             </div>
           </div>
-          <div class="btn btn-dark w-25 mb-3 align-self-center">
+          <div class="btn btn-dark w-25 mb-3 align-self-center" id="reset-button">
             Bilgileri Sıfırla
           </div>
         </div>

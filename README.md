@@ -73,6 +73,12 @@ In this repository, I will create a simple budget app that helps you to track yo
 - [x] Add Functionality
 - [x] Create Objects for Income and Expense
 - [x] Add Event Handler
+- [x] Get Input Values
+- [x] Add New Item to UI
+- [x] Calculate Budget
+- [x] Update UI
+- [x] Update Budget Controller
+
 
 
 
