@@ -19,7 +19,7 @@
     <h1 class="header text-center py-5">Budget Buddy</h1>
 
     <!-- INCOME -->
-    <main class="main">
+    <main class="main p-3">
       <div class="d-flex align-items-center justify-content-center">
         <div class="input-group w-50 mb-3">
           <input
@@ -33,7 +33,7 @@
           </button>
         </div>
       </div>
-      <!-- TABLE -->
+      <!-- EXPENSES -->
 
       <div class="container w-50">
         <div class="card">
@@ -42,17 +42,93 @@
             <div class="row">
               <div class="col-6">
                 <p>Harcama yapılan yer</p>
-                <input id="where" type="text" class="w-100" />
+                <input
+                  id="where"
+                  type="text"
+                  class="w-100"
+                  placeholder="Market, Kira, Fatura..."
+                />
               </div>
               <div class="col-6">
                 <p>Tarih</p>
-                <input id="time" type="date" class="w-100" />
+                <input
+                  id="time"
+                  type="datetime-local"
+                  class="w-100"
+                  value="2023-06-06T12:00"
+                  
+                />
               </div>
             </div>
-            <div class="align-self-center">
+            <div>
               <p class="mt-5">Harcama</p>
-              <input id="expense" type="text" class="w-100" />
+              <input
+                id="expense"
+                type="text"
+                class="w-100"
+                placeholder="***$"
+              />
             </div>
+            <div class="d-flex justify-content-center mt-5">
+              <button class="btn btn-dark" id="add-expense">Kaydet</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TABLE -->
+
+      <div class="container w-50 mt-2">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-header my-3 text-center">Harcamalar</div>
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Tarih</th>
+                  <th scope="col">Harcama Yeri</th>
+                  <th scope="col">Miktar</th>
+                </tr>
+              </thead>
+              <tbody id="table-body">
+                <tr>
+                  <td>Market</td>
+                  <td>12.12.2020</td>
+                  <td>100$</td>
+                </tr>
+                <tr>
+                  <td>Kira</td>
+                  <td>12.12.2020</td>
+                  <td>100$</td>
+                </tr>
+                <tr>
+                  <td>Fatura</td>
+                  <td>12.12.2020</td>
+                  <td>100$</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="d-flex justify-content-end mt-5">
+              <table class="table table-responsive table-striped w-25">
+                <thead>
+                  <tr>
+                    <th scope="colgroup">Toplam</th>
+                    <th scope="colgroup">: 300$</th>
+                  </tr>
+                  <tr>
+                    <th scope="colgroup">Kalan</th>
+                    <th scope="colgroup">: 300$</th>
+                  </tr>
+                  <tr>
+                    <th scope="colgroup">Gelir</th>
+                    <th scope="colgroup">: 300$</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+          <div class="btn btn-dark w-25 mb-3 align-self-center">
+            Bilgileri Sıfırla
           </div>
         </div>
       </div>
