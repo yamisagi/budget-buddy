@@ -70,7 +70,9 @@ In this repository, I will create a simple budget app that helps you to track yo
 - [x] Add Bootstrap
 - [x] Create UI
 - [x] Complete UI Design
-- [ ] Add Functionality
+- [x] Add Functionality
+- [x] Create Objects for Income and Expense
+- [x] Add Event Handler
 
 
 

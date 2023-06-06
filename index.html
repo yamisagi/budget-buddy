@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
@@ -24,9 +31,9 @@
         <div class="input-group w-50 mb-3">
           <input
             type="text"
-            class="form-control"
+            id="income-value"
             placeholder="Gelir Ekle"
-            aria-label="Recipient's username"
+            class="income-value form-control"
           />
           <button class="btn btn-dark" type="button" id="add-income">
             Ekle
@@ -38,7 +45,9 @@
       <div class="container w-50">
         <div class="card">
           <div class="card-body">
-            <div class="card-header my-3 text-center display-5">Harcama Formu</div>
+            <div class="card-header my-3 text-center display-5">
+              Harcama Formu
+            </div>
             <div class="row">
               <div class="col-6">
                 <p>Harcama yapılan yer</p>
@@ -51,12 +60,7 @@
               </div>
               <div class="col-6">
                 <p>Tarih</p>
-                <input
-                  id="time-input"
-                  type="datetime-local"
-                  class="w-100"
-                  
-                />
+                <input id="time-input" type="datetime-local" class="w-100" />
               </div>
             </div>
             <div>
@@ -94,33 +98,49 @@
                   <td>Market</td>
                   <td>12.12.2020</td>
                   <td>100$</td>
+
+                  <td class="d-flex justify-content-center align-items-center">
+                    <div class="btn btn-sm btn-danger">
+                      <i class="fas fa-trash-alt"></i>
+                    </div>
+                  </td>
                 </tr>
                 <tr>
                   <td>Kira</td>
                   <td>12.12.2020</td>
                   <td>100$</td>
+                  <td class="d-flex justify-content-center align-items-center">
+                    <div class="btn btn-sm btn-danger">
+                      <i class="fas fa-trash-alt"></i>
+                    </div>
+                  </td>
                 </tr>
                 <tr>
                   <td>Fatura</td>
                   <td>12.12.2020</td>
                   <td>100$</td>
+                  <td class="d-flex justify-content-center align-items-center">
+                    <div class="btn btn-sm btn-danger">
+                      <i class="fas fa-trash-alt"></i>
+                    </div>
+                  </td>
                 </tr>
               </tbody>
             </table>
             <div class="d-flex justify-content-end mt-5">
-              <table class="table table-responsive table-striped w-25">
+              <table class="table rounded table-dark table-striped w-25">
                 <thead>
                   <tr>
-                    <th scope="colgroup">Toplam</th>
-                    <th scope="colgroup">: 300$</th>
+                    <th scope="col">Toplam</th>
+                    <th scope="col">: 300$</th>
                   </tr>
                   <tr>
-                    <th scope="colgroup">Kalan</th>
-                    <th scope="colgroup">: 300$</th>
+                    <th scope="col">Kalan</th>
+                    <th scope="col">: 300$</th>
                   </tr>
                   <tr>
-                    <th scope="colgroup">Gelir</th>
-                    <th scope="colgroup">: 300$</th>
+                    <th scope="col">Gelir</th>
+                    <th scope="col">: 300$</th>
                   </tr>
                 </thead>
               </table>
