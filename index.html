@@ -38,12 +38,12 @@
       <div class="container w-50">
         <div class="card">
           <div class="card-body">
-            <div class="card-header my-3 text-center display-4">Harcamalar</div>
+            <div class="card-header my-3 text-center display-5">Harcama Formu</div>
             <div class="row">
               <div class="col-6">
                 <p>Harcama yapılan yer</p>
                 <input
-                  id="where"
+                  id="where-input"
                   type="text"
                   class="w-100"
                   placeholder="Market, Kira, Fatura..."
@@ -52,10 +52,9 @@
               <div class="col-6">
                 <p>Tarih</p>
                 <input
-                  id="time"
+                  id="time-input"
                   type="datetime-local"
                   class="w-100"
-                  value="2023-06-06T12:00"
                   
                 />
               </div>
@@ -63,7 +62,7 @@
             <div>
               <p class="mt-5">Harcama</p>
               <input
-                id="expense"
+                id="expense-input"
                 type="text"
                 class="w-100"
                 placeholder="***$"
@@ -134,6 +133,7 @@
       </div>
     </main>
 
+    <script src="./assets/script/app.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
