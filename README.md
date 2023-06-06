@@ -66,6 +66,9 @@ In this repository, I will create a simple budget app that helps you to track yo
 - [x] Project Setup
 - [x] Add HTML
 - [x] Add CSS
+- [x] Add JavaScript
+- [x] Add Bootstrap
+- [x] Create UI
 
 
 
