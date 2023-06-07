@@ -32,10 +32,11 @@ const addIncome = addIncomeButton.addEventListener('click', function (e) {
     e.preventDefault();
 
     if (incomeValue.value === '' || incomeValue.value === null || incomeValue.value === 0 || incomeValue.value < 0) {
-        alert('Lütfen geçerli bir gelir giriniz');
+        showAlert();
+        incomeValue.value = '';
     }
     else if (isNaN(Number(incomeValue.value))) {
-        alert('Lütfen geçerli bir gelir giriniz');
+        showAlert();
         incomeValue.value = '';
     }
     else {
@@ -50,7 +51,7 @@ const addIncome = addIncomeButton.addEventListener('click', function (e) {
 const addExpense = addExpenseButton.addEventListener('click', function (e) {
     e.preventDefault();
     if (whereInput.value === '' || whereInput.value == null || whereInput.value == 0 || whereInput.value < 0 || whereInput.value == NaN || timeInput.value === '' || timeInput.value == null || timeInput.value == 0 || timeInput.value < 0 || timeInput.value == NaN || expenseInput.value === '' || expenseInput.value == null || expenseInput.value == 0 || expenseInput.value < 0 || expenseInput.value == NaN) {
-        alert('Lütfen geçerli değer giriniz');
+        showAlert();
 
     }
     else {
@@ -72,7 +73,8 @@ const addExpense = addExpenseButton.addEventListener('click', function (e) {
 const saveExpense = saveExpenseButton.addEventListener('click', function (e) {
     e.preventDefault();
     if (incomeObject.expenses.length == 0) {
-        alert('Lütfen en az bir gider ekleyiniz');
+        showAtLeastOneExpenseAlert();
+
     } else {
         calculate();
 
@@ -84,8 +86,8 @@ const saveExpense = saveExpenseButton.addEventListener('click', function (e) {
         });
 
         tableBody.innerHTML = ''; // Clear the table body before adding new rows
-                                  // If we don't clear the table body, 
-                                  // The new rows will be added to the end of the table
+        // If we don't clear the table body, 
+        // The new rows will be added to the end of the table
 
         newExpenses.forEach(function (expense) {
             const newRow = document.createElement('tr');
@@ -109,7 +111,7 @@ const saveExpense = saveExpenseButton.addEventListener('click', function (e) {
         });
 
         incomeObject.expenses = newExpenses; // Update the incomeObject.expenses array with the 
-                                            // newExpenses array
+        // newExpenses array
     }
 });
 
@@ -141,6 +143,24 @@ const resetButton = document.getElementById('reset-button').addEventListener('cl
     e.preventDefault();
     reset();
 });
+
+function showAlert() {
+    new Noty({
+        text: 'Lütfen geçerli bir değer giriniz',
+        type: 'error',
+        theme: 'mint',
+        timeout: 3000,
+    }).show();
+}
+
+function showAtLeastOneExpenseAlert() {
+    new Noty({
+        text: 'Lütfen en az bir gider giriniz',
+        type: 'error',
+        theme: 'mint',
+        timeout: 3000,
+    }).show();
+}
 
 
 // We should create a function to calculate the total expense
