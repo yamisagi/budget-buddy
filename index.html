@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -22,58 +31,70 @@
   </head>
   <body>
     <!-- HEADER -->
+    <!-- TODO: Improve UI -->
 
     <h1 class="header text-center py-5">Budget Buddy</h1>
 
     <!-- INCOME -->
-    <main class="main p-3">
-      <div class="d-flex align-items-center justify-content-center">
-        <div class="input-group w-50 mb-3">
-          <input
-            type="text"
-            id="income-value"
-            placeholder="Gelir Ekle"
-            class="income-value form-control"
-          />
-          <button class="btn btn-dark" type="button" id="add-income">
-            Ekle
-          </button>
+    <main class="main">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-sm-12 col-md-8 col-lg-6 mx-3">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                id="income-value"
+                placeholder="Gelir Ekle"
+                class="income-value form-control"
+              />
+              <button class="btn btn-danger" type="button" id="add-income">
+                Ekle
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+
       <!-- EXPENSES -->
 
-      <div class="container w-50">
-        <div class="card">
-          <div class="card-body">
-            <div class="card-header my-3 text-center display-5">
-              Harcama Formu
-            </div>
-            <div class="row">
-              <div class="col-6">
-                <p>Harcama yapılan yer</p>
+      <div class="container-fluid">
+        <div class="container expense-container">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-header text-dark my-3 text-center display-5">
+                Harcama Formu
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-6 text-dark">
+                  <p>Harcama yapılan yer</p>
+                  <input
+                    id="where-input"
+                    type="text"
+                    class="form-control"
+                    placeholder="Market, Kira, Fatura..."
+                  />
+                </div>
+                <div class="col-12 col-md-6 mt-3 mt-md-0 text-dark">
+                  <p>Tarih</p>
+                  <input
+                    id="time-input"
+                    type="datetime-local"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="mt-3">
+                <p class="mt-5 text-dark">Harcama</p>
                 <input
-                  id="where-input"
+                  id="expense-input"
                   type="text"
-                  class="w-100"
-                  placeholder="Market, Kira, Fatura..."
+                  class="form-control"
+                  placeholder="***₺"
                 />
               </div>
-              <div class="col-6">
-                <p>Tarih</p>
-                <input id="time-input" type="datetime-local" class="w-100" />
+              <div class="d-flex justify-content-center mt-5" id="save-expense">
+                <button class="btn btn-danger" id="add-expense">Kaydet</button>
               </div>
-            </div>
-            <div>
-              <p class="mt-5">Harcama</p>
-              <input
-                id="expense-input"
-                type="text"
-                class="w-100"
-                placeholder="***₺"
-              />
-            </div>
-            <div class="d-flex justify-content-center mt-5" id="save-expense">
-              <button class="btn btn-dark" id="add-expense">Kaydet</button>
             </div>
           </div>
         </div>
@@ -81,47 +102,57 @@
 
       <!-- TABLE -->
 
-      <div class="container w-50 mt-2">
-        <div class="card">
-          <div class="card-body">
-            <div class="card-header my-3 text-center">Harcamalar</div>
-            <table
-              class="table table-bordered table-striped"
-              id="expenses-table"
-            >
-              <thead>
-                <tr>
-                  <th scope="col">Harcama Yeri</th>
-                  <th scope="col">Tarih</th>
-                  <th scope="col">Miktar</th>
-                </tr>
-              </thead>
-              <tbody id="table-body"></tbody>
-            </table>
-            <div class="d-flex justify-content-end mt-5">
-              <table
-                class="table rounded table-dark table-striped w-25"
-                id="calculate-table"
-              >
-                <thead>
-                  <tr id="income">
-                    <th scope="col">Geliriniz</th>
-                    <th scope="col" id="total-income">0₺</th>
-                  </tr>
-                  <tr id="expense">
-                    <th scope="col">Gideriniz</th>
-                    <th scope="col" id="total-expense">0₺</th>
-                  </tr>
-                  <tr id="total">
-                    <th scope="col">Kalan</th>
-                    <th scope="col" id="total-balance">0₺</th>
-                  </tr>
-                </thead>
-              </table>
+      <div class="container-fluid">
+        <div class="container expense-container mt-2">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-header my-3 text-center text-dark">
+                Harcamalar
+              </div>
+              <div class="">
+                <table
+                  class="table table-bordered table-striped"
+                  id="expenses-table"
+                >
+                  <thead>
+                    <tr>
+                      <th scope="col">Harcama Yeri</th>
+                      <th scope="col">Tarih</th>
+                      <th scope="col">Miktar</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-body"></tbody>
+                </table>
+              </div>
+              <div class="d-flex justify-content-end mt-5">
+                <div class="col-lg-6">
+                  <table
+                    class="table rounded table-dark table-striped w-100"
+                    id="calculate-table"
+                  >
+                    <thead>
+                      <tr id="income">
+                        <th scope="col">Geliriniz</th>
+                        <th scope="col" id="total-income">0₺</th>
+                      </tr>
+                      <tr id="expense">
+                        <th scope="col">Gideriniz</th>
+                        <th scope="col" id="total-expense">0₺</th>
+                      </tr>
+                      <tr id="total">
+                        <th scope="col">Kalan</th>
+                        <th scope="col" id="total-balance">0₺</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+              </div>
+              <div class="d-flex justify-content-center mt-3">
+                <button class="btn btn-danger mb-3" id="reset-button">
+                  Bilgileri Sıfırla
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="btn btn-dark w-25 mb-3 align-self-center" id="reset-button">
-            Bilgileri Sıfırla
           </div>
         </div>
       </div>

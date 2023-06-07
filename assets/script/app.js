@@ -31,8 +31,12 @@ const expenseObject = {
 const addIncome = addIncomeButton.addEventListener('click', function (e) {
     e.preventDefault();
 
-    if (incomeValue.value === '' || incomeValue.value == null || incomeValue.value == 0 || incomeValue.value < 0 || incomeValue.value == NaN) {
+    if (incomeValue.value === '' || incomeValue.value === null || incomeValue.value === 0 || incomeValue.value < 0) {
         alert('Lütfen geçerli bir gelir giriniz');
+    }
+    else if (isNaN(Number(incomeValue.value))) {
+        alert('Lütfen geçerli bir gelir giriniz');
+        incomeValue.value = '';
     }
     else {
         incomeObject.income += Number(incomeValue.value);
@@ -86,13 +90,20 @@ const saveExpense = saveExpenseButton.addEventListener('click', function (e) {
         newExpenses.forEach(function (expense) {
             const newRow = document.createElement('tr');
             newRow.innerHTML = `
-            <td>${expense .where}</td>
-            <td>${expense .time}</td>
-            <td>${expense.expense + '₺'}</td>
-            <td class="d-flex justify-content-center align-items-center">
-            <div class="btn btn-sm btn-danger"> <i class="fas fa-trash-alt"></i>
-            </div>
-            </td>
+            <tbody id="table-body">
+            <tbody id="table-body">
+             <tr>
+              <td class="text-break">${expense.where}</td>
+              <td class="text-break">${expense.time}</td>
+              <td class="text-break">${expense.expense + '₺'}</td>
+              <td class="d-flex justify-content-center align-items-center">
+              <div class="btn-group d-flex justify-content-center">
+               <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
+              </div>
+              </td>
+              </tr>
+             </tbody>
+
         `;
             tableBody.appendChild(newRow);
         });
