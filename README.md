@@ -78,6 +78,8 @@ In this repository, I will create a simple budget app that helps you to track yo
 - [x] Calculate Budget
 - [x] Update UI
 - [x] Update Budget Controller
+- [x] Improve UI w/ Responsive Design
+- [x] Project Done & Ready to Deploy 🚀
 
 
 
